@@ -1,0 +1,45 @@
+/****************** NAVIGATION SYSTEM *********************/
+nav {
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	padding:  0px;
+	border-bottom: 1px solid #fff;
+}
+
+nav ul{
+	list-style: none;
+	margin: 7px;
+	font-family: Calibri;
+	font-size: 1.1em;
+	font-weight: 666;
+	float: center;
+}
+
+nav ul li {
+	display: inline-block;
+	width: 5.5em;
+	margin: 0px 5px 0px 5px;
+	border-top: 1px solid #ccc;
+	border-right: 3px solid #999;
+	border-bottom: 3px solid #999;
+	border-left: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #444;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+nav ul li a:active{
+	color:#fce;
+}
+
+nav ul li a:hover{
+	color:#fce;
+}
+
+nav ul li a:visited{
+	color:#cfc;
+} 
