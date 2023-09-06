@@ -60,7 +60,7 @@
 					
 					<h1 style = "font-size: 4vw;">Graeme's Music</h1>
 					
-					<h2 style = "padding-top: 1vw; font-size: 2vw;">Popular Right Now</h2>
+					<h2 style = "padding-top: 1vw; font-size: 2.5vw;">Popular Right Now</h2>
 					
 					<!-- Javascript from an imported library to easily edit all the carousels  -->
 					<script>
@@ -74,7 +74,6 @@
   								focus  : 'center',
 								autoplay: true,
   								snap   : true,
-								wheel  : true,
 							} );
 
 							// Only allows 1 carousel
@@ -102,6 +101,26 @@
 								</li>
 								<li class="splide__slide" data-splide-interval="10000">
 									<div class="inner">
+										<img src = "images/clickbait/useinwebsitepls.png" style = "width: 45vw" alt = "Not Waving, But Drowning">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/clickbait/useinwebsitepls2.png" style = "width: 45vw" alt = "Hugo">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/clickbait/useinwebsitepls3.jpeg" style = "width: 45vw" alt = "Psychodrama">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/clickbait/useinwebsitepls4.png" style = "width: 45vw" alt = "Heavy Is The Head">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
 										<img src = "images/clickbait/Future_Nostalgia.jpg" style = "width: 45vw" alt = "Future Nostalgia">
 									</div>
 								</li>
@@ -115,8 +134,6 @@
 										<img src = "images/clickbait/Foo_Fighters.jpg" style = "width: 45vw" alt = "Foo Fighters">
 									</div>
 								</li>
-								
-								
 								<li class="splide__slide" data-splide-interval="10000">
 									<div class="inner">
 										<img src = "images/clickbait/Equals.jpg" style = "width: 45vw" alt = "Equals">
@@ -142,8 +159,6 @@
 										<img src = "images/clickbait/Austin.jpg" style = "width: 45vw" alt = "Austin">
 									</div>
 								</li>
-								
-								
 								<li class="splide__slide" data-splide-interval="10000">
 									<div class="inner">
 										<img src = "images/clickbait/What_Was_I_Made_For.jpg" style = "width: 45vw" alt = "What Was I Made For">
@@ -169,8 +184,6 @@
 										<img src = "images/clickbait/Split_Decision.jpg" style = "width: 45vw" alt = "Spllit Descision">
 									</div>
 								</li>
-								
-								
 								<li class="splide__slide" data-splide-interval="10000">
 									<div class="inner">
 										<img src = "images/clickbait/Speak_Now.jpg" style = "width: 45vw" alt = "Speak Now">
