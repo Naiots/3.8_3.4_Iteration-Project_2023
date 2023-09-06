@@ -121,14 +121,14 @@ heading1, heading2{
 
 heading2{
 	grid-template-rows: 100%;
-	border-bottom: 0.05vw solid #ffffff;
+	border-bottom: 0.05vw solid #f3f3f3;
 	padding-top: 0.1vw;
 	padding-bottom: 0.1vw;
 }
 
 heading1{
 	padding-right: 4vw;
-	border-bottom: 0.2vw solid #ffffff;
+	border-bottom: 0.2vw solid #f3f3f3;
 	grid-template-rows: 100%;
 	background-color: #292a33;	
 	text-align: center;
@@ -147,17 +147,18 @@ heading3, heading4{
 
 heading3{
 	padding: 0;
-	border-bottom: 0.2vw solid #ffffff;
+	border-bottom: 0.2vw solid #f3f3f3;
 	grid-template-rows: 100%;
 	background-color: #292a33;
 	position: sticky;
 	top: 0;
 	box-shadow: 0 10px 6px -6px #18191f;
+	background-color: purple;
 }
 
 heading4{
 	grid-template-rows: 100%;
-	border-bottom: 0.05vw solid #ffffff;
+	border-bottom: 0.05vw solid #f3f3f3;
 	padding-top: 0.5vw;
 	padding-bottom: 0.5vw;
 }
@@ -184,7 +185,7 @@ User1, Password1{
 	box-sizing: border-box;
 	margin: 8vh auto;
 	position: relative;
-	background-color: #ffffff;
+	background-color: purple;
 	padding: 50vw;
 	display: block;
 	max-width: 38.54vw;
