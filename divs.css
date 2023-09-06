@@ -24,12 +24,14 @@ html, body{
 	min-height: 54.8vw;
 	overflow: hidden;
 	width: 100%;
-	background-color: #da5a7d;
+	background-image: linear-gradient(90deg, #FB914D 0%, #C5718B 50%, #8B62C1 100%);
 }
 
 .wrapper{
 	text-align: center;
 }
+
+
 
 /**************** CAROUSEL CUSTOMIZATION *******************/
 
@@ -48,7 +50,6 @@ html, body{
 #feat-artist {
 	width: 100%;
 	height: 54.8vw;
-	background-color: navy;
 }
 
 #images{
@@ -57,14 +58,39 @@ html, body{
 	align-items: center;
 }
 
+
 /***************** FORMS CUSTOMIZATION ********************/
 
 #content{
-	border: 2px;
-	border-color: red;
-	border-style: solid;
 	width: auto;
-	background-color: green;
+}
+
+.splide__slide .inner{
+	width: fit-content;
+	transform: scale( 0.4 );
+	margin-left: -10vw;
+}
+
+.splide__slide.is-active .inner{
+	box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+	transform: scale( 0.55 );
+    transition: transform .9s ease-out, box-shadow 0.9s ease-in-out;
+    z-index: 1;
+	width: fit-content;
+	margin-left: -10vw;
+}
+
+.splide__slide .inner:after{
+	box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+	transform: scale( 0.35 );
+    transition: transform .9s ease-out, box-shadow 0.9s ease-in-out;
+    z-index: 1;
+	width: fit-content;
+	margin-left: -10vw;
 }
 
 input[type=text], input[type=password], select{
@@ -87,7 +113,14 @@ input[type=submit]{
 }
 
 #show-password{
-	padding-right: 17vw;
+	padding-right: 16vw;
+	padding-top: 0.5vw;
+	font-weight: 400;
+	font-size: 1.3vw;
+}
+
+input[type=checkbox]{
+	width: 1vw;
 }
 
 /*************** HOMEPAGE CUSTOMIZATION ******************/
@@ -103,12 +136,6 @@ input[type=submit]{
 	background-attachment: fixed;
 }
 
-#playlists{
-	border: 2px;
-	border-color: pink;
-	border-style: solid;
-}
-
 /***************** QUERY CUSTOMIZATION ********************/
 heading1, heading2{
 	padding: 0;
@@ -117,20 +144,21 @@ heading1, heading2{
 	display: grid;
 	grid-gap: 1.5%;	
 	grid-template-columns: 4% 24% 14% 22% 11% 7% 11%;
+	font-size: 1.15vw;
+	background-color: #100C08;
 }
 
 heading2{
 	grid-template-rows: 100%;
-	border-bottom: 0.05vw solid #f3f3f3;
+	border-bottom: 0.05vw solid #ffffff;
 	padding-top: 0.1vw;
 	padding-bottom: 0.1vw;
 }
 
 heading1{
 	padding-right: 4vw;
-	border-bottom: 0.2vw solid #f3f3f3;
+	border-bottom: 0.2vw solid #ffffff;
 	grid-template-rows: 100%;
-	background-color: #292a33;	
 	text-align: center;
 	position: sticky;
 	top: 0;
@@ -143,22 +171,22 @@ heading3, heading4{
 	grid-gap: 2%;	
 	grid-template-columns: 70% 30%;
 	text-align: left;
+	font-size: 1.15vw;
+	background-color: #100C08;
 }
 
 heading3{
 	padding: 0;
-	border-bottom: 0.2vw solid #f3f3f3;
+	border-bottom: 0.2vw solid #ffffff;
 	grid-template-rows: 100%;
-	background-color: #292a33;
 	position: sticky;
 	top: 0;
 	box-shadow: 0 10px 6px -6px #18191f;
-	background-color: purple;
 }
 
 heading4{
 	grid-template-rows: 100%;
-	border-bottom: 0.05vw solid #f3f3f3;
+	border-bottom: 0.05vw solid #ffffff;
 	padding-top: 0.5vw;
 	padding-bottom: 0.5vw;
 }
@@ -170,7 +198,7 @@ User1, Password1{
 
 .query{
 	box-sizing: border-box;
-	background-color: pink;
+	background-color: #292a33;
 	text-align: center;
 	display: block;
 	margin: 2.4vh auto;
@@ -179,19 +207,21 @@ User1, Password1{
 	height: 75.95vh;
 	overflow-y: auto;
 	overflow-x: hidden;
+	background-color: #100C08;
 }
 
 .admin-content{
 	box-sizing: border-box;
 	margin: 8vh auto;
 	position: relative;
-	background-color: purple;
+	background-color: #ffffff;
 	padding: 50vw;
 	display: block;
-	max-width: 38.54vw;
+	max-width: 40vw;
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
+	background-color: #100C08;
 }
 
 /*************** ACCOUNT CUSTOMIZATION ******************/
@@ -200,7 +230,6 @@ User1, Password1{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: purple;
 }
 
 form button[name="delete-account"] {
@@ -218,6 +247,7 @@ form button[name="delete-account"] {
 form button[name="delete-account"]:hover {
 	background-color: red;
 	color: white;
+	cursor: pointer;
 }
 
 ul.right-align {
@@ -247,37 +277,34 @@ ul.right-align li a {
 ul.right-align li a:hover {
 	background-color: red;
 	color: white;
+	cursor: pointer;
 }
 
 /********************* EMPTIES ************************/
 #empty1{
 	padding-top: 17vw;
 	border: 2px;
-	border-color: yellow;
+	border-color: blue;
 	border-style: solid;
-	background-color: blue;
 }
 
 #empty2{
 	padding-top: 10vw;
 	border: 2px;
-	border-color: yellow;
+	border-color: blue;
 	border-style: solid;
-	background-color: blue;
 }
 
 #empty3{
 	padding-top: 7vw;
 	border: 2px;
-	border-color: yellow;
+	border-color: blue;
 	border-style: solid;
-	background-color: blue;
 }
 
 #empty4{
 	padding-top: 15vw;
 	border: 2px;
-	border-color: yellow;
+	border-color: blue;
 	border-style: solid;
-	background-color: blue;
 }
