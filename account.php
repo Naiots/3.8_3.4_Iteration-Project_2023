@@ -141,9 +141,6 @@ if (isset($_POST['confirm_delete'])) {  // Activates only when the delete button
 
 		<!-- Add a title so the user knows what page they're on even if they're in another page -->
 		<title>Graeme's Music | Account</title>
-		
-		<!-- Favicon to make the website's tab unique and personalized to other website tabs -->
-		<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
 
 		<!-- Setup Meta Data and let the browser know what charset is being used -->
 		<meta charset="UTF-8">
@@ -161,171 +158,164 @@ if (isset($_POST['confirm_delete'])) {  // Activates only when the delete button
 
 	<body>
 		<main>
-			<?php
-			//Pulls the links from the nav.php page and places them in the navigation div
-			require 'loader.php'; //'require' is 100% needed for the site to run 
-			?>
 			<div class = "wrapper">
 				<div class = "nav">
 					<?php
-					//Pulls the links from the nav.php page and places them in the navigation div
-					require 'nav_1.php'; //'require' is 100% needed for the site to run 
+					// Pulls the links from the nav_1.php page and places them in the navigation div
+					require 'nav_1.php'; // 'require' is 100% needed for the site to run
 					?>
+
 				</div>
 
-				<div class="content">
+				<!-- Empty div to space out the next divisions from the top -->
+				<div id = "empty4" style = ""></div>
 
-					<!-- Empty div to space out the next divisions from the top -->
-					<div id = "empty4" style = ""></div>
+				<!-- "content" holds the page's main content -->
+				<div id = "content">
+					<h1 style = "font-size: 3.2vw;">Account Settings</h1><br>
 
-					<!-- "content" holds the page's main content -->
-					<div id = "content">
-						<h1 style = "font-size: 3.2vw;">Account Settings</h1><br>
+					<div class="updateDetails">
+						<!-- The start of the form that the user needs/can fill in -->
+						<h3><form method = "post" id = "updateAccount">
 
-						<div class="updateDetails">
-							<!-- The start of the form that the user needs/can fill in -->
-							<h3><form method = "post" id = "updateAccount">
+							<!-- Field for the First Name -->
+							<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">First Name</label><br>
+							<input type = "text" name = "fname" placeholder = "Enter Your First Name..." value="<?php echo $row['First_Name']; ?>"/><br><br>
 
-								<!-- Field for the First Name -->
-								<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">First Name</label><br>
-								<input type = "text" name = "fname" placeholder = "Enter Your First Name..." value="<?php echo $row['First_Name']; ?>"/><br><br>
+							<!-- Field for the Last Name -->
+							<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">Last Name</label><br>
+							<input type = "text" name = "lname" placeholder = "Enter Your Last Name..." value="<?php echo $row['Last_Name']; ?>"/><br><br>
 
-								<!-- Field for the Last Name -->
-								<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">Last Name</label><br>
-								<input type = "text" name = "lname" placeholder = "Enter Your Last Name..." value="<?php echo $row['Last_Name']; ?>"/><br><br>
+							<!-- Field for the Username -->
+							<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">Username</label><br>
+							<input type = "text" name = "username" placeholder = "Enter Your Username..." value="<?php echo $row['Username']; ?>"/><br><br>
 
-								<!-- Field for the Username -->
-								<label for = "login" style = "padding-right: 20.5vw; font-size: 1.3vw;">Username</label><br>
-								<input type = "text" name = "username" placeholder = "Enter Your Username..." value="<?php echo $row['Username']; ?>"/><br><br>
+							<!-- Field for the Current Password -->
+							<label for = "login" style = "padding-right: 15.5vw; font-size: 1.3vw;">Current Password</label><br>
+							<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter Your Current Password..."/><br>
 
-								<!-- Field for the Current Password -->
-								<label for = "login" style = "padding-right: 15.5vw; font-size: 1.3vw;">Current Password</label><br>
-								<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter Your Current Password..."/><br>
+							<!-- This division holds the code for the "show password" checkbox -->
+							<div id="show-password">
+								<!-- The actual checkbox and link to the javascript code -->
+								<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
 
-								<!-- This division holds the code for the "show password" checkbox -->
-								<div id="show-password">
-									<!-- The actual checkbox and link to the javascript code -->
-									<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
-
-									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-									<script>
-										function myFunction() {
-											var x = document.getElementById("password-input");
-											if (x.type === "password") {
-												x.type = "text";
-											} else {
-												x.type = "password";
-											}
-
+								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+								<script>
+									function myFunction() {
+										var x = document.getElementById("password-input");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
 										}
-									</script>
-								</div>
 
-								<!-- Field for the New Password -->
-								<label for = "login" style = "padding-right: 18vw; font-size: 1.3vw;">New Password</label><br>
-								<input id = "newPassword-input" type = "password" name = "newPassword-input" placeholder = "Enter A New Password..."/><br>
-
-								<!-- This division holds the code for the "show password" checkbox -->
-								<div id="show-password">
-									<!-- The actual checkbox and link to the javascript code -->
-									<input type="checkbox" onclick="myFunction2()"> Show Password<br><br>
-
-									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-									<script>
-										function myFunction2() {
-											var x = document.getElementById("newPassword-input");
-											if (x.type === "password") {
-												x.type = "text";
-											} else {
-												x.type = "password";
-											}
-										}
-									</script>
-								</div>
-
-								<!-- Field for the Email (This cannot be edited for security reasons as a hacked account can send themselves a "forgot password" email to lock out the original user) -->
-								<label for = "login" style = "padding-right: 23.5vw; font-size: 1.3vw;">Email</label><br>
-								<input type = "text" name = "email" placeholder = "You Shouldn't See This - Please Contact Support" value="<?php echo $row['Email']; ?>" disabled/><br><br>
-
-								<!-- Field for the Phone Number (Is optional for an account) -->
-								<label for = "login" style = "padding-right: 11vw; font-size: 1.3vw;">Phone Number (Optional)</label><br>
-								<input type = "text" name = "phone" placeholder = "Please Enter Your Phone Number" value="<?php echo $row['Phone']; ?>"/><br><br>
-
-								<!-- Field for the City (Is optional for an account) -->
-								<label for = "login" style = "padding-right: 18vw; font-size: 1.3vw;">City (Optional)</label><br>
-								<input type = "text" name = "city" placeholder = "Please Enter Your Current City" value="<?php echo $row['City']; ?>"/><br><br>
-
-								<!-- Dropdown field for the Country (Is optional for an account) -->
-								<label for = "country" style = "padding-right: 15vw; font-size: 1.3vw;">Country (Optional)</label><br>
-								<!-- Since this is a dropdown, the user is limited to two options. The recorded value of the selected option is the "value" (Is optional for an account) -->
-								<select name="country" id="country" style = "width: 27vw;">
-									<option value="Australia">Australia</option>
-									<option value="New Zealand">New Zealand</option>
-								</select>
-
-								<!-- Any error messages will print here -->
-								<p>
-									<?php
-									echo $check11;
-									echo $check10;
-									?>
-								</p><br>
-
-								<!-- The submit button that will make the line 42 if statement true -->
-								<input type = "submit" name = "update" value = " Update My Details "/><br>
-
-								<!-- End of the form -->
-								</form></h3><br>
-
-							<!-- Javascript for a window.confirm() pop up to appear -->
-							<script>
-								function confirmDelete() { // Once this function is called, the code will run
-									if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) { // Asks user for confirmation
-										// If the user clicks "OK" in the confirmation dialog, submit the form
-										document.getElementById("deleteForm").submit();
-									} else {
-										// If the user clicks "Cancel," do nothing
 									}
-								}
-							</script>
-
-							<!-- This division holds both buttons at the bottom -->
-							<div class="button-container">
-
-								<ul class = "right-align">
-
-									<!-- This is the Logout button which will run 'signOut.php' located in the root file and will end the session therefore logging the active user out -->
-									<li><a href='signOut.php'>Logout</a></li>
-
-								</ul>
-
-								<!-- This tag avoids the text from breaking lines -->
-								<nobr>
-									<!-- A new form for a singular button that will run some Javascript and PHP -->
-									<form id="deleteForm" method="POST" action="account.php">
-
-										<!-- Links up the php on line 121 -->
-										<input type="hidden" name="confirm_delete" value="1">
-
-										<!-- This is the button that will launch the Javascript on line 274 -->
-										<button type="button" onclick="confirmDelete()" name = "delete-account">Delete My Account</button>
-
-									</form>
-
-
-								</nobr>
+								</script>
 							</div>
 
+							<!-- Field for the New Password -->
+							<label for = "login" style = "padding-right: 18vw; font-size: 1.3vw;">New Password</label><br>
+							<input id = "newPassword-input" type = "password" name = "newPassword-input" placeholder = "Enter A New Password..."/><br>
+
+							<!-- This division holds the code for the "show password" checkbox -->
+							<div id="show-password">
+								<!-- The actual checkbox and link to the javascript code -->
+								<input type="checkbox" onclick="myFunction2()"> Show Password<br><br>
+
+								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+								<script>
+									function myFunction2() {
+										var x = document.getElementById("newPassword-input");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
+										}
+									}
+								</script>
+							</div>
+
+							<!-- Field for the Email (This cannot be edited for security reasons as a hacked account can send themselves a "forgot password" email to lock out the original user) -->
+							<label for = "login" style = "padding-right: 23.5vw; font-size: 1.3vw;">Email</label><br>
+							<input type = "text" name = "email" placeholder = "You Shouldn't See This - Please Contact Support" value="<?php echo $row['Email']; ?>" disabled/><br><br>
+
+							<!-- Field for the Phone Number (Is optional for an account) -->
+							<label for = "login" style = "padding-right: 11vw; font-size: 1.3vw;">Phone Number (Optional)</label><br>
+							<input type = "text" name = "phone" placeholder = "Please Enter Your Phone Number" value="<?php echo $row['Phone']; ?>"/><br><br>
+
+							<!-- Field for the City (Is optional for an account) -->
+							<label for = "login" style = "padding-right: 18vw; font-size: 1.3vw;">City (Optional)</label><br>
+							<input type = "text" name = "city" placeholder = "Please Enter Your Current City" value="<?php echo $row['City']; ?>"/><br><br>
+
+							<!-- Dropdown field for the Country (Is optional for an account) -->
+							<label for = "country" style = "padding-right: 15vw; font-size: 1.3vw;">Country (Optional)</label><br>
+							<!-- Since this is a dropdown, the user is limited to two options. The recorded value of the selected option is the "value" (Is optional for an account) -->
+							<select name="country" id="country" style = "width: 27vw;">
+								<option value="Australia">Australia</option>
+								<option value="New Zealand">New Zealand</option>
+							</select>
+
+							<!-- Any error messages will print here -->
+							<p>
+								<?php
+								echo $check11;
+								echo $check10;
+								?>
+							</p><br>
+
+							<!-- The submit button that will make the line 42 if statement true -->
+							<input type = "submit" name = "update" value = " Update My Details "/><br>
+
+							<!-- End of the form -->
+							</form></h3><br>
+
+						<!-- Javascript for a window.confirm() pop up to appear -->
+						<script>
+							function confirmDelete() { // Once this function is called, the code will run
+								if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) { // Asks user for confirmation
+									// If the user clicks "OK" in the confirmation dialog, submit the form
+									document.getElementById("deleteForm").submit();
+								} else {
+									// If the user clicks "Cancel," do nothing
+								}
+							}
+						</script>
+
+						<!-- This division holds both buttons at the bottom -->
+						<div class="button-container">
+
+							<ul class = "right-align">
+
+								<!-- This is the Logout button which will run 'signOut.php' located in the root file and will end the session therefore logging the active user out -->
+								<li><a href='signOut.php'>Logout</a></li>
+
+							</ul>
+
+							<!-- This tag avoids the text from breaking lines -->
+							<nobr>
+								<!-- A new form for a singular button that will run some Javascript and PHP -->
+								<form id="deleteForm" method="POST" action="account.php">
+
+									<!-- Links up the php on line 121 -->
+									<input type="hidden" name="confirm_delete" value="1">
+
+									<!-- This is the button that will launch the Javascript on line 274 -->
+									<button type="button" onclick="confirmDelete()" name = "delete-account">Delete My Account</button>
+
+								</form>
+
+							</nobr>
+
 						</div>
+
 					</div>
+
 				</div>
+				<?php
+				//Pulls the links from the nav.php page and places them in the navigation div
+				require 'footer.php'; //'require' is 100% needed for the site to run 
+				?>
 			</div>
-			<?php
-			//Pulls the links from the nav.php page and places them in the navigation div
-			require 'footer.php'; //'require' is 100% needed for the site to run 
-			?>
 		</main>
-		<!-- Links the loader javascript -->
-		<script src="js/loader.js"></script>
 	</body>
 </html>
