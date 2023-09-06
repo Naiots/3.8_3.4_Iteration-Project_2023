@@ -1,0 +1,114 @@
+html{
+	background-color: #fff;
+	overflow: scroll;
+	overflow-x: hidden;	
+}
+
+::-webkit-scrollbar {
+	width: 0;
+	background: transparent;		
+}
+
+main{
+	background-color: #666;
+	position: relative;
+	margin: auto;
+	margin-top: -10px;
+	width: 90%;
+	min-height: 900px;
+	border: 2px solid #fff;
+}
+
+/* Thewrapper that lays out the grid */
+.wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 50px 50px 550px 50px;
+	border: 1px solid #000; /* Styles the boarder for all grids*/
+}
+
+.header, .title, .footer{
+	background-color: #000;
+} /* Used to make a div black */
+
+.title{
+	padding-top: 5px;
+} /* Used to make a div red */
+
+.content{
+	background-color: #555;
+	z-index: 2;
+
+} /* Used to make a div green */
+
+
+
+/* Used to size the image */
+.image01 {
+    height: 100%;
+    width: 100%;
+}
+
+section1, section2{
+	background-color: #888;
+	width: 80px;
+	min-height: 30px;
+	padding: 10px 0px 15px 5px;
+	position: absolute;
+	top: 350px;
+	z-index: 3;
+	border: 2px solid #000;
+}
+
+section1{
+	left: 220px;
+}
+
+section2{
+	left: 320px;
+}
+
+user1, password1{
+	width: 100px;
+	min-height: 20px;
+	position: absolute;
+	top: 320px;
+	z-index: 3;
+}
+
+user1{
+	left: 225px;
+}
+
+password1{
+	left: 325px;
+}
+
+user2{
+	width: 90px;
+	min-height: 20px;
+	position: relative;
+	z-index: 3;
+	left: 5px;
+}
+	
+
+section3, section4{
+	background-color: #555;
+	width: 300px;
+	height: 120px;
+	padding: 10px;
+	position: absolute;
+	top: 350px;
+	left: 30%;
+	z-index: 4;
+	border: 2px solid #fff;
+}
+
+section3{
+	height: 120px;
+}
+
+section4{
+	height: 180px;
+}
