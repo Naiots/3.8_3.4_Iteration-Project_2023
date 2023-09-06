@@ -307,7 +307,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 							<!------------------------------------------------------------------ EMPTY -------------------------------------------------------------------->
 						</div>
 
-						<h1 style = "font-size: 2vw;">Delete an Account</h1><br>
+						<h1 style = "font-size: 2vw;">Delete An Account</h1><br>
 
 						<div class="deleteAccount">
 							<!-- The start of the form that the user needs/can fill in -->
