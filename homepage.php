@@ -12,11 +12,13 @@
 
     // Array of messages
     $messages = [
-        "Message 1",
-        "Message 2",
-        "Message 3",
-        "Message 4",
-		"Message 5",
+        "Welcome back ",
+        "Lets find what you're looking for ",
+        "Scroll down to find your song ",
+        "Here's a riddle: who's the best user?<br>Answer: ",
+		"Hello ",
+		"Hi ",
+		"Get ready for some bangers ",
     ];
 
     // Generate a random index within the array range
@@ -70,8 +72,8 @@
 					<div id = "greeting-text"style = 'padding-top: 18vw;'>
 						
 						<!-- Prints the randomly generated message from line 27 and the user's first name to make the experience different and personal everytime the user logs in -->
-						<?php echo "<span>" . $quip . "</span> <span>" . ($_SESSION['login_user']) . "?</span>" ?>
-						<p>Lorem Ipsum</p>
+						<?php echo "<span>" . $quip . "</span> <span>" . ($_SESSION['login_user']) . "!</span>" ?>
+						<p style = "font-size: 1.1vw;">Let's listen to some music</p>
 						
 					</div>
 					
@@ -106,13 +108,13 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw;" >Splide Basic HTML Example</h1>
+  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw; font-size: 2vw;" >Graeme's First Query</h1>
 						
 						<!-- Adds a "See All" button which is a link to the query's page -->
 						<div class = "nav" style = "width: 49%; display: inline-block;">
-							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 1.7vw;">
-								<ul>
-									<li class = "login"><a href="query1.php">See All</a></li>
+							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 2.5vw;">
+								<ul style = "margin-top: 0;">
+									<li class = "login"><a href="query1.php" style = "font-size: 1.225vw;">See All</a></li>
 								</ul>
 							</div>
 						</div>
@@ -134,13 +136,13 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw;" >Splide Basic HTML Example</h1>
+  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw; font-size: 2vw;" >Graeme's Second Query</h1>
 						
 						<!-- Adds a "See All" button which is a link to the query's page -->
 						<div class = "nav" style = "width: 49%; display: inline-block;">
-							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 1.7vw;">
-								<ul>
-									<li class = "login"><a href="query2.php">See All</a></li>
+							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 2.5vw;">
+								<ul style = "margin-top: 0;">
+									<li class = "login"><a href="query2.php" style = "font-size: 1.225vw;">See All</a></li>
 								</ul>
 							</div>
 						</div>
@@ -162,13 +164,13 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw;" >Splide Basic HTML Example</h1>
+  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw; font-size: 2vw;" >Pop</h1>
 						
 						<!-- Adds a "See All" button which is a link to the query's page -->
 						<div class = "nav" style = "width: 49%; display: inline-block;">
-							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 1.7vw;">
-								<ul>
-									<li class = "login"><a href="query3.php">See All</a></li>
+							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 2.5vw;">
+								<ul style = "margin-top: 0;">
+									<li class = "login"><a href="query3.php" style = "font-size: 1.225vw;">See All</a></li>
 								</ul>
 							</div>
 						</div>
@@ -190,13 +192,13 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw;" >Splide Basic HTML Example</h1>
+  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw; font-size: 2vw;" >Country</h1>
 						
 						<!-- Adds a "See All" button which is a link to the query's page -->
 						<div class = "nav" style = "width: 49%; display: inline-block;">
-							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 1.7vw;">
-								<ul>
-									<li class = "login"><a href="query4.php">See All</a></li>
+							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 2.5vw;">
+								<ul style = "margin-top: 0;">
+									<li class = "login"><a href="query4.php" style = "font-size: 1.225vw;">See All</a></li>
 								</ul>
 							</div>
 						</div>
@@ -218,13 +220,13 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw;" >Splide Basic HTML Example</h1>
+  						<h1 id="carousel-heading" style = "text-align: left; width: 49%; display: inline-block; margin-bottom: 1vw; font-size: 2vw;" >Rock</h1>
 						
 						<!-- Adds a "See All" button which is a link to the query's page -->
 						<div class = "nav" style = "width: 49%; display: inline-block;">
-							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 1.7vw;">
-								<ul>
-									<li class = "login"><a href="query5.php">See All</a></li>
+							<div class = "buttons" style = "padding-left: 15vw; margin-bottom: 2.5vw;">
+								<ul style = "margin-top: 0;">
+									<li class = "login"><a href="query5.php" style = "font-size: 1.225vw;">See All</a></li>
 								</ul>
 							</div>
 						</div>
