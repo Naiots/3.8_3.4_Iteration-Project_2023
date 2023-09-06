@@ -61,6 +61,9 @@ ob_end_flush();
 
 		<!-- Add a title so the user knows what page they're on even if they're in another page -->
 		<title>Graeme's Music | Log In</title>
+		
+		<!-- Favicon to make the website's tab unique and personalized to other website tabs -->
+		<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
 
 		<!-- Setup Meta Data and let the browser know what charset is being used -->
 		<meta charset="UTF-8">
@@ -77,6 +80,11 @@ ob_end_flush();
 	</head>
 
 	<body>
+		
+		<?php
+		//Pulls the links from the nav.php page and places them in the navigation div
+		require 'loader.php'; //'require' is 100% needed for the site to run 
+		?>
 		<main>
 			<div class = "wrapper">
 
@@ -84,17 +92,19 @@ ob_end_flush();
 					<!-- Website's logo which also acts as a button to redirect the user to "index.php" -->
 					<div class = "logo">
 						<a href = "index.php">
-							<img src = "images/download.png" style = "width: 12vw; position: static;">
+							<img src = "images/logos/Logo1.png" style = "width: 12vw; position: static;" alt = "Logo">
 						</a>
 					</div>
 
 				</div>
+				
+				<div class = "content">
 
 				<!-- Empty div to space out the next divisions from the top -->
 				<div id = "empty1"></div>
 
 				<!-- "content" holds the page's main content -->
-				<div id = "content">
+				
 
 					<h1 style = "font-size: 5.5vw;">Login</h1>
 
@@ -150,5 +160,7 @@ ob_end_flush();
 				?>
 			</div>
 		</main>
+		<!-- Links the loader javascript -->
+		<script src="js/loader.js"></script>
 	</body>
 </html>
