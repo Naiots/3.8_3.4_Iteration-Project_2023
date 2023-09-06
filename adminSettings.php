@@ -122,9 +122,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 
 		<!-- Add a title so the user knows what page they're on even if they're in another page -->
 		<title>[Admin] Graeme's Music | Admin Settings</title>
-		
-		<!-- Favicon to make the website's tab unique and personalized to other website tabs -->
-		<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
 
 		<!-- Setup Meta Data and let the browser know what charset is being used -->
 		<meta charset="UTF-8">
@@ -141,10 +138,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 	</head>
 
 	<body>
-		<?php
-		//Pulls the links from the nav.php page and places them in the navigation div
-		require 'loader.php'; //'require' is 100% needed for the site to run 
-		?>
 		<main>
 			<div class = "wrapper">
 				<div class = "nav">
@@ -164,174 +157,172 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 
 				</div>
 
-				<div class="content">
+				<!-- Empty div to space out the next divisions from the top -->
+				<div id = "empty2"></div>
 
-					<!-- Empty div to space out the next divisions from the top -->
-					<div id = "empty2"></div>
+				<!-- "content" holds the page's main content -->
+				<div id = "content">
+					<h1 style = "font-size: 2vw;">Create An Account</h1><br>
 
-					<!-- "content" holds the page's main content -->
-					<div id = "content">
-						<h1 style = "font-size: 2vw;">Create An Account</h1><br>
+					<div class="addAccount">
+						<!-- The start of the form that the user needs/can fill in -->
+						<h3><form method = "post" id = "addAccount">
 
-						<div class="addAccount">
-							<!-- The start of the form that the user needs/can fill in -->
-							<h3><form method = "post" id = "addAccount">
+							<!-- Field for the First Name -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">First Name</label><br>
+							<input type = "text" name = "fname" placeholder = "Enter User's First Name"/><br><br>
 
-								<!-- Field for the First Name -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">First Name</label><br>
-								<input type = "text" name = "fname" placeholder = "Enter User's First Name"/><br><br>
+							<!-- Field for the Last Name -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Last Name</label><br>
+							<input type = "text" name = "lname" placeholder = "Enter User's Last Name..."/><br><br>
 
-								<!-- Field for the Last Name -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Last Name</label><br>
-								<input type = "text" name = "lname" placeholder = "Enter User's Last Name..."/><br><br>
+							<!-- Field for the Username -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
+							<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
 
-								<!-- Field for the Username -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
-								<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
+							<!-- Field for the Email -->
+							<label for = "login" style = "padding-right: 23.5vw; font-size: 1.3vw;">Email</label><br>
+							<input type = "text" name = "email" placeholder = "Enter User's Email..."/><br><br>
 
-								<!-- Field for the Email -->
-								<label for = "login" style = "padding-right: 23.5vw; font-size: 1.3vw;">Email</label><br>
-								<input type = "text" name = "email" placeholder = "Enter User's Email..."/><br><br>
+							<!-- Field for the Password -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Password</label><br>
+							<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter User's Password..."/><br>
 
-								<!-- Field for the Password -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Password</label><br>
-								<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter User's Password..."/><br>
+							<!-- This division holds the code for the "show password" checkbox -->
+							<div id="show-password">
+								<!-- The actual checkbox and link to the javascript code -->
+								<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
 
-								<!-- This division holds the code for the "show password" checkbox -->
-								<div id="show-password">
-									<!-- The actual checkbox and link to the javascript code -->
-									<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
-
-									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-									<script>
-										function myFunction() {
-											var x = document.getElementById("password-input");
-											if (x.type === "password") {
-												x.type = "text";
-											} else {
-												x.type = "password";
-											}
-
+								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+								<script>
+									function myFunction() {
+										var x = document.getElementById("password-input");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
 										}
-									</script>
-								</div>
 
-								<!-- Any error messages will print here -->
-								<?php
-								echo $check11;
-								echo $check10;
-								?>
-								<br>
+									}
+								</script>
+							</div>
 
-								<!-- The submit button that will make the line 25 if statement true -->
-								<input type = "submit" name = "add" value = " Create Account "/><br>
+							<!-- Any error messages will print here -->
+							<?php
+							echo $check11;
+							echo $check10;
+							?>
+							<br>
 
-								<!-- End of the form -->
-								</form></h3>
-						</div>
+							<!-- The submit button that will make the line 25 if statement true -->
+							<input type = "submit" name = "add" value = " Create Account "/><br>
 
-						<!-- Empty field to separate forms -->
-						<div id = "empty3">
-							<!------------------------------------------------------------------ EMPTY -------------------------------------------------------------------->
-						</div>
-
-						<h1 style = "font-size: 2vw;">Update A Password</h1><br>
-
-						<div class="updatePassword">
-							<!-- The start of the form that the user needs/can fill in -->
-							<h3><form method = "post" id = "updateAccount">
-
-								<!-- Field for the Username -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
-								<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
-
-								<!-- Field for the Password -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Password</label><br>
-								<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter User's Password..."/><br>
-
-								<!-- This division holds the code for the "show password" checkbox -->
-								<div id="show-password">
-									<!-- The actual checkbox and link to the javascript code -->
-									<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
-
-									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-									<script>
-										function myFunction() {
-											var x = document.getElementById("password-input");
-											if (x.type === "password") {
-												x.type = "text";
-											} else {
-												x.type = "password";
-											}
-
-										}
-									</script>
-								</div>
-								<label for = "login" style = "padding-right: 19vw; font-size: 1.3vw;">New Password</label><br>
-								<input id = "newPassword-input" type = "password" name = "newPassword-input" placeholder = "Enter User's New Password..."/><br>
-
-								<!-- This division holds the code for the "show password" checkbox -->
-								<div id="show-password">
-									<!-- The actual checkbox and link to the javascript code -->
-									<input type="checkbox" onclick="myFunction2()"> Show Password<br><br>
-
-									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-									<script>
-										function myFunction2() {
-											var x = document.getElementById("newPassword-input");
-											if (x.type === "password") {
-												x.type = "text";
-											} else {
-												x.type = "password";
-											}
-										}
-									</script>
-								</div>
-
-								<!-- Any error messages will print here -->
-								<?php
-								echo $check21;
-								echo $check20;
-								?>
-								<br>
-
-								<!-- The submit button that will make the line 56 if statement true -->
-								<input type = "submit" name = "update" value = " Update Password "/><br>
-
-								<!-- End of the form -->
-								</form></h3>
-						</div>
-
-						<!-- Empty field to separate forms -->
-						<div id = "empty3">
-							<!------------------------------------------------------------------ EMPTY -------------------------------------------------------------------->
-						</div>
-
-						<h1 style = "font-size: 2vw;">Delete an Account</h1><br>
-
-						<div class="deleteAccount">
-							<!-- The start of the form that the user needs/can fill in -->
-							<h3><form method = "post" id = "deleteAccount">
-
-								<!-- Field for the Username -->
-								<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
-								<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
-
-								<!-- Any error messages will print here -->
-								<?php
-								echo $check31;
-								echo $check30;
-								?>
-								<br>
-
-								<!-- The submit button that will make the line 56 if statement true -->
-								<input type = "submit" name = "delete" value = " Delete Account "/><br>
-
-								<!-- End of the form -->
-								</form></h3>
-
-						</div>
+							<!-- End of the form -->
+							</form></h3>
 					</div>
+
+					<!-- Empty field to separate forms -->
+					<div id = "empty3">
+						<!------------------------------------------------------------------ EMPTY -------------------------------------------------------------------->
+					</div>
+
+					<h1 style = "font-size: 2vw;">Update A Password</h1><br>
+
+					<div class="updatePassword">
+						<!-- The start of the form that the user needs/can fill in -->
+						<h3><form method = "post" id = "updateAccount">
+
+							<!-- Field for the Username -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
+							<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
+
+							<!-- Field for the Password -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Password</label><br>
+							<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter User's Password..."/><br>
+
+							<!-- This division holds the code for the "show password" checkbox -->
+							<div id="show-password">
+								<!-- The actual checkbox and link to the javascript code -->
+								<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
+
+								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+								<script>
+									function myFunction() {
+										var x = document.getElementById("password-input");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
+										}
+
+									}
+								</script>
+							</div>
+							<label for = "login" style = "padding-right: 19vw; font-size: 1.3vw;">New Password</label><br>
+							<input id = "newPassword-input" type = "password" name = "newPassword-input" placeholder = "Enter User's New Password..."/><br>
+
+							<!-- This division holds the code for the "show password" checkbox -->
+							<div id="show-password">
+								<!-- The actual checkbox and link to the javascript code -->
+								<input type="checkbox" onclick="myFunction2()"> Show Password<br><br>
+
+								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+								<script>
+									function myFunction2() {
+										var x = document.getElementById("newPassword-input");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
+										}
+									}
+								</script>
+							</div>
+
+							<!-- Any error messages will print here -->
+							<?php
+							echo $check21;
+							echo $check20;
+							?>
+							<br>
+
+							<!-- The submit button that will make the line 56 if statement true -->
+							<input type = "submit" name = "update" value = " Update Password "/><br>
+
+							<!-- End of the form -->
+							</form></h3>
+					</div>
+
+					<!-- Empty field to separate forms -->
+					<div id = "empty3">
+						<!------------------------------------------------------------------ EMPTY -------------------------------------------------------------------->
+					</div>
+
+					<h1 style = "font-size: 2vw;">Delete an Account</h1><br>
+
+					<div class="deleteAccount">
+						<!-- The start of the form that the user needs/can fill in -->
+						<h3><form method = "post" id = "deleteAccount">
+
+							<!-- Field for the Username -->
+							<label for = "login" style = "padding-right: 21.5vw; font-size: 1.3vw;">Username</label><br>
+							<input type = "text" name = "username" placeholder = "Enter Username..."/><br><br>
+
+							<!-- Any error messages will print here -->
+							<?php
+							echo $check31;
+							echo $check30;
+							?>
+							<br>
+
+							<!-- The submit button that will make the line 56 if statement true -->
+							<input type = "submit" name = "delete" value = " Delete Account "/><br>
+
+							<!-- End of the form -->
+							</form></h3>
+
+					</div>
+
 				</div>
 				<?php
 				//Pulls the links from the nav.php page and places them in the navigation div
@@ -339,8 +330,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 				?>
 			</div>
 		</main>
-
-		<!-- Links the loader javascript -->
-		<script src="js/loader.js"></script>
 	</body>
 </html>
