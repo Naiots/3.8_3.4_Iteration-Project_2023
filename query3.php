@@ -48,7 +48,7 @@
 				
 				<!-- Image and header to indicate what the query is -->
 				<img src = "images/download.png" style = "width: 12vw; border: 2px; border-color: green; float: left; padding-left: 7.5vw; padding-right: 2vw; padding-bottom: 1.5vw;" alt = "image"> 
-				<h1 style = "text-align: left; padding-top: 2vw;">Lorem Ipsum</h1>
+				<h1 style = "text-align: left; padding-top: 2vw; font-size: 3vw;">Pop</h1>
 				
 				<?php
 					// connect.php (tells where to connect servername, username, password, dbaseName)
@@ -66,7 +66,7 @@
 				?>
 				
 				<!-- Displays the result of the total time query -->
-				<p style = "text-align: left;"><?php echo $output['Total_Time']; ?></p>
+				<p style = "text-align: left; font-size: 1.5vw;"><?php echo $output['Total_Time']; ?></p>
 				
 				<?php
 					// Close the output while loop

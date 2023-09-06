@@ -1,6 +1,39 @@
+/********************** FONT IMPORT *************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+
 /****************** FONTS CUSTOMIZATION *********************/
 
 html
 {
 	color: #f3f3f3;
+	font-family: 'Inter', sans-serif;
+}
+
+h1
+{
+	font-weight: 700;
+}
+
+h2
+{
+	font-weight: 500;
+}
+
+figcaption
+{
+	font-weight: 400;
+	font-size: 3.5vw;
+}
+
+a
+{
+	color: #1456FF;
+}
+
+span
+{
+	font-weight: 700;
+	font-size: 3.8vw;
 }
