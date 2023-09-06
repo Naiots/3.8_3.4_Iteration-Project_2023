@@ -41,17 +41,17 @@
 							<!-- Buttons to allow the user to login and sign up -->
 							<div class = "buttons" style = "padding-left: 15vw">
 								<ul>
-									<li class = "login"><a href="login.php">Login</a></li>
-									<li class = "signup"><a href="signup.php">Sign Up</a></li>
+									<li class = "login" style = "font-size: 1.225vw;"><a href="login.php">Login</a></li>
+									<li class = "signup" style = "font-size: 1.225vw;"><a href="signup.php">Sign Up</a></li>
 								</ul>
 							</div>
 						</nav>
 						
 					</div>
 					
-					<h1>Graeme's Music</h1>
+					<h1 style = "font-size: 4vw;">Graeme's Music</h1>
 					
-					<h2>Popular Right Now</h2>
+					<h2 style = "padding-top: 1vw; font-size: 2vw;">Popular Right Now</h2>
 					
 					<!-- Javascript from an imported library to easily edit all the carousels  -->
 					<script>
@@ -63,7 +63,7 @@
 								drag   : 'free',
   								perPage: 4,
   								focus  : 'center',
-								autoplay: true,
+								//autoplay: true,
   								snap   : true,
 								wheel  : true,
 							} );
@@ -77,16 +77,35 @@
 					<section class="splide" aria-labelledby="carousel-heading" style = "padding-bottom: 5vw; padding-top: 5vw; text-align: center;">
 						
 						<!-- Heading for the carousel -->
-  						<h2 id="carousel-heading" style="text-align: center;">Splide Basic HTML Example</h2>
 
 						<!-- All desired images in order for the carousel -->
  						<div class="splide__track">
 							<ul class="splide__list">
-								<li class="splide__slide" data-splide-interval="10000"><img src = "images/download(1).png" style = "width: 17.7vw;"></li>
-								<li class="splide__slide" data-splide-interval="10000"><img src = "images/download(2).png" style = "width: 17.7vw"></li>
-								<li class="splide__slide" data-splide-interval="10000"><img src = "images/download(3).png" style = "width: 17.7vw"></li>
-								<li class="splide__slide" data-splide-interval="10000"><img src = "download(4).png" style = "width: 17.7vw"></li>
-								<li class="splide__slide" data-splide-interval="10000"><img src = "download(5).png" style = "width: 17.7vw"></li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/download(1).png" style = "width: 17.7vw">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/download(2).png" style = "width: 17.7vw">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "images/download(3).png" style = "width: 17.7vw">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "download(4).png" style = "width: 17.7vw">
+									</div>
+								</li>
+								<li class="splide__slide" data-splide-interval="10000">
+									<div class="inner">
+										<img src = "download(5).png" style = "width: 17.7vw">
+									</div>
+								</li>
 							</ul>
   						</div>
 					</section>
@@ -99,8 +118,8 @@
 				
 				<!-- Div to feature artist profiles -->
 				<div id="feat-artist">
-					<h1>Lorem Ipsum</h1>
-					<p>Lorem Ipsum</p>
+					<h1 style = "padding-top: 3vw; font-size: 4vw;">Discover</h1>
+					<p style = "padding-top: 1vw; font-size: 2vw;">Find new up-and-coming artists you like</p>
 					
 					<!-- Holds the images -->
 					<div id="images">
@@ -110,7 +129,7 @@
 							
 							<img src = "images/download.png" style = "border-radius: 50%; width: 17.7vw; height: 17.7vw; margin: 3vw;">
 							<!-- Adds a caption to an image -->
-							<figcaption>Lorem Ipsum</figcaption>
+							<figcaption>Mei Rose</figcaption>
 							
 						</figure>
 						
@@ -119,7 +138,7 @@
 							
 							<img src = "images/download.png" style = "border-radius: 50%; width: 26vw; height: 26vw; margin: 3vw;">
 							<!-- Adds a caption to an image -->
-							<figcaption>Lorem Ipsum</figcaption>
+							<figcaption style = "font-weight: 700; font-size: 4vw">Lil Mabu</figcaption>
 							
 						</figure>
 						
@@ -128,7 +147,7 @@
 							
 							<img src = "images/download.png" style = "border-radius: 50%; width: 17.7vw; height: 17.7vw; margin: 3vw;">
 							<!-- Adds a caption to an image -->
-							<figcaption>Lorem Ipsum</figcaption>
+							<figcaption>Qiyah Abdul</figcaption>
 							
 						</figure>
 						
