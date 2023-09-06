@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 					<!-- "content" holds the page's main content -->
 					<div id = "content">
 
-						<h1>Lorem Ipsum</h1>
+						<h1 style = "font-size: 3.5vw;">Create an account</h1>
 
 						<!-- Provides a direct link to "login.php" in case the user already has an account -->
 						<p>Already have an account? - <a href = "login.php">Log In</a></p><br><br>
