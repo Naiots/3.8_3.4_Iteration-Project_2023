@@ -1,101 +1,93 @@
 <?php
-// Session start
-session_start();
-// If the user isnt't logged in, redirect them to the landing page
-if(!isset($_SESSION['login_user'])){
-	header("location: index.php");
-}
-// Otherwise, store their first name into a dedicated variable for later use
-else{
-	$User = $_SESSION['login_user'];
-}
+	// Session start
+	session_start();
+	// If the user isnt't logged in, redirect them to the landing page
+	if(!isset($_SESSION['login_user'])){
+		header("location: index.php");
+	}
+	// Otherwise, store their first name into a dedicated variable for later use
+	else{
+		$User = $_SESSION['login_user'];
+	}
 ?>
 
 <!DOCTYPE html>
 <!-- Define document language -->
 <html lang="en">
 	<head>
-
+		
 		<!-- Add a title so the user knows what page they're on even if they're in another page -->
 		<title>Graeme's Music | Graeme's Second Query</title>
 		
-		<!-- Favicon to make the website's tab unique and personalized to other website tabs -->
-		<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
-
 		<!-- Setup Meta Data and let the browser know what charset is being used -->
 		<meta charset="UTF-8">
-		<meta name="description" content="Welcome to Graeme's Music! Relax, and let us take care of your musical needs.">
-		<meta name="keywords" content="Music, Database, Graeme">
-		<meta name="author" content="SJeames">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="description" content="Welcome to Graeme's Music! Relax, and let us take care of your musical needs.">
+        <meta name="keywords" content="Music, Database, Graeme">
+        <meta name="author" content="SJeames">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
 		<!-- Setup and link all external css stylesheets -->
-		<link rel="stylesheet" type="text/css" href="nav_1.css">
+        <link rel="stylesheet" type="text/css" href="nav_1.css">
 		<link rel="stylesheet" type="text/css" href="fonts.css">
 		<link rel="stylesheet" type="text/css" href="divs.css">
 		<link rel="stylesheet" href="splide/splide-default.min.css">
 	</head>
 
 	<body>
-		<?php
-		//Pulls the links from the nav.php page and places them in the navigation div
-		require 'loader.php'; //'require' is 100% needed for the site to run 
-		?>
 		<main>
 			<div class = "wrapper">
 				<div class = "nav">
 					<?php
-					//Pulls the links from the nav.php page and places them in the navigation div
-					require 'nav_1.php'; //'require' is 100% needed for the site to run 
-					?>
+                        //Pulls the links from the nav.php page and places them in the navigation div
+                        require 'nav_1.php'; //'require' is 100% needed for the site to run 
+                    ?>
 				</div>
-				<div class="content">
-
-					<!-- Empty div to space out the next divisions from the top -->
-					<div id = "empty4"></div>
-
-					<!-- Image and header to indicate what the query is -->
-					<img src = "images/secondQuery/SecondQuery.jpg" style = "width: 12vw; border: 2px; border-color: green; float: left; padding-left: 7.5vw; padding-right: 2vw; padding-bottom: 1.5vw;" alt = "Album Cover"> 
-					<h1 style = "text-align: left; padding-top: 2vw; font-size: 3vw;">Every Song (Genres & Artist Names in ASC Order)</h1>
-
-					<?php
+				
+				<!-- Empty div to space out the next divisions from the top -->
+				<div id = "empty4"></div>
+				
+				<!-- Image and header to indicate what the query is -->
+				<img src = "images/download.png" style = "width: 12vw; border: 2px; border-color: green; float: left; padding-left: 7.5vw; padding-right: 2vw; padding-bottom: 1.5vw;" alt = "image"> 
+				<h1 style = "text-align: left; padding-top: 2vw; font-size: 3vw;">Every Song (Genres & Artist Names in ASC Order)</h1>
+				
+				<?php
 					// connect.php (tells where to connect servername, username, password, dbaseName)
 					require "Music_Database_mysqli.php";
-
+					
 					// Calculates the total duration of the songs
 					$query = ("SELECT SEC_TO_TIME(SUM(s.Duration)) AS Total_Time FROM song_details AS s");
-
+					
 					// Runs the query above
 					$result = mysqli_query($conn,$query);
-
+				
 					// While loop to output the results				
 					while($output=mysqli_fetch_array($result))
 					{	
-					?>
-
-					<!-- Displays the result of the total time query -->
-					<p style = "text-align: left; font-size: 1.5vw;"><?php echo $output['Total_Time']; ?></p>
+				?>
+				
+				<!-- Displays the result of the total time query -->
+				<p style = "text-align: left; font-size: 1.5vw;"><?php echo $output['Total_Time']; ?></p>
+				
+				<?php
+					// Close the output while loop
+					}
+				?>
+				
+				<!-- "query" holds the page's main content -->
+				<div class = "query">
+					
+					<!-- Each column heading -->
+					<heading1>
+						<Song_ID1><h3>#</h3></Song_ID1>
+						<Title1><h3>TITLE</h3></Title1>
+						<Artist1><h3>ARTIST</h3></Artist1>
+						<Album1><h3>ALBUM</h3></Album1>
+						<Genre1><h3>GENRE</h3></Genre1>
+						<Duration1><h3>SECS</h3></Duration1>
+						<Size1><h3>SIZE</h3></Size1>
+					</heading1>
 
 					<?php
-						// Close the output while loop
-					}
-					?>
-
-					<!-- "query" holds the page's main content -->
-					<div class = "query">
-
-						<!-- Each column heading -->
-						<heading1>
-							<Song_ID1><h3>#</h3></Song_ID1>
-							<Title1><h3>TITLE</h3></Title1>
-							<Artist1><h3>ARTIST</h3></Artist1>
-							<Album1><h3>ALBUM</h3></Album1>
-							<Genre1><h3>GENRE</h3></Genre1>
-							<Duration1><h3>SECS</h3></Duration1>
-							<Size1><h3>SIZE (KB)</h3></Size1>
-						</heading1>
-
-						<?php
 						// connect.php (tells where to connect servername, username, password, dbaseName)
 						require "Music_Database_mysqli.php";
 
@@ -135,18 +127,15 @@ else{
 						</heading2>
 						<?php
 							// Close the output while loop
-						}
+							}
 						?>
-
-					</div>
+					
 				</div>
 				<?php
-				//Pulls the links from the nav.php page and places them in the navigation div
-				require 'footer.php'; //'require' is 100% needed for the site to run 
-				?>
+                    //Pulls the links from the nav.php page and places them in the navigation div
+                    require 'footer.php'; //'require' is 100% needed for the site to run 
+                ?>
 			</div>
 		</main>
-		<!-- Links the loader javascript -->
-		<script src="js/loader.js"></script>
 	</body>
 </html>
