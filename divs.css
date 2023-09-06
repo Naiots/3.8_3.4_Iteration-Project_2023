@@ -1,114 +1,283 @@
+/**************** GENERAL CUSTOMIZATION *******************/
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
 html{
-	background-color: #fff;
-	overflow: scroll;
-	overflow-x: hidden;	
+	background-color: #100C08;
 }
 
 ::-webkit-scrollbar {
-	width: 0;
-	background: transparent;		
+	display: none; /* Hides the scrollbar */
 }
 
-main{
-	background-color: #666;
+html, body{
+	padding: 0 !important; /* !important prioritizes this over everything else */
+	margin: 0 !important; /* !important prioritizes this over everything else */
+}
+
+/***************** INDEX CUSTOMIZATION ********************/
+
+.wrapper .gradient{
+	min-height: 54.8vw;
+	overflow: hidden;
+	width: 100%;
+	background-color: #da5a7d;
+}
+
+.wrapper{
+	text-align: center;
+}
+
+/**************** CAROUSEL CUSTOMIZATION *******************/
+
+.splide{
+	text-align: left;
+}
+
+
+#overlay {
+	background-image:url("images/download.png");
+	width: 100%;
+	height: 54.8vw;
+	background-size: cover;
+}
+
+#feat-artist {
+	width: 100%;
+	height: 54.8vw;
+	background-color: navy;
+}
+
+#images{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/***************** FORMS CUSTOMIZATION ********************/
+
+#content{
+	border: 2px;
+	border-color: red;
+	border-style: solid;
+	width: auto;
+	background-color: green;
+}
+
+input[type=text], input[type=password], select{
+	width: 25vw;
+	height: 3vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	font-size: 1.1vw;
+}
+
+input[type=submit]{
+	background-image: linear-gradient(90deg, #FB914D 0%, #C5718B 50%, #8B62C1 100%);
+	border: none;
+	color: white;
+	padding: 1vw 2vw;
+	border-radius: 0.7vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#show-password{
+	padding-right: 17vw;
+}
+
+/*************** HOMEPAGE CUSTOMIZATION ******************/
+#greeting{
+	text-align: center;
+	height: 44vw;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url(images/download.png);
+	justify-content: center;
+	align-items: center;
+	background-attachment: fixed;
+}
+
+#playlists{
+	border: 2px;
+	border-color: pink;
+	border-style: solid;
+}
+
+/***************** QUERY CUSTOMIZATION ********************/
+heading1, heading2{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display: grid;
+	grid-gap: 1.5%;	
+	grid-template-columns: 4% 24% 14% 22% 11% 7% 11%;
+}
+
+heading2{
+	grid-template-rows: 100%;
+	border-bottom: 0.05vw solid #f3f3f3;
+	padding-top: 0.1vw;
+	padding-bottom: 0.1vw;
+}
+
+heading1{
+	padding-right: 4vw;
+	border-bottom: 0.2vw solid #f3f3f3;
+	grid-template-rows: 100%;
+	background-color: #292a33;	
+	text-align: center;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 10px 6px -6px #18191f;
+}
+
+heading3, heading4{
+	width: 100%;
+	display: grid;
+	grid-gap: 2%;	
+	grid-template-columns: 70% 30%;
+	text-align: left;
+}
+
+heading3{
+	padding: 0;
+	border-bottom: 0.2vw solid #f3f3f3;
+	grid-template-rows: 100%;
+	background-color: #292a33;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 10px 6px -6px #18191f;
+	background-color: purple;
+}
+
+heading4{
+	grid-template-rows: 100%;
+	border-bottom: 0.05vw solid #f3f3f3;
+	padding-top: 0.5vw;
+	padding-bottom: 0.5vw;
+}
+
+User1, Password1{
+	width: 3.6vw;
+	text-align: left;
+}
+
+.query{
+	box-sizing: border-box;
+	background-color: pink;
+	text-align: center;
+	display: block;
+	margin: 2.4vh auto;
+	width: 100%;
+	max-width: 85vw;
+	height: 75.95vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.admin-content{
+	box-sizing: border-box;
+	margin: 8vh auto;
 	position: relative;
-	margin: auto;
-	margin-top: -10px;
-	width: 90%;
-	min-height: 900px;
-	border: 2px solid #fff;
+	background-color: purple;
+	padding: 50vw;
+	display: block;
+	max-width: 38.54vw;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
 }
 
-/* Thewrapper that lays out the grid */
-.wrapper {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 200px 50px 50px 550px 50px;
-	border: 1px solid #000; /* Styles the boarder for all grids*/
+/*************** ACCOUNT CUSTOMIZATION ******************/
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: purple;
 }
 
-.header, .title, .footer{
-	background-color: #000;
-} /* Used to make a div black */
-
-.title{
-	padding-top: 5px;
-} /* Used to make a div red */
-
-.content{
-	background-color: #555;
-	z-index: 2;
-
-} /* Used to make a div green */
-
-
-
-/* Used to size the image */
-.image01 {
-    height: 100%;
-    width: 100%;
+form button[name="delete-account"] {
+	background-color: transparent;
+	color: red;
+	border: 2px solid red;
+	border-radius: 20px;
+	padding: 6px;
+	width: 180px;
+	text-align: center;
+	transition: background-color 0.3s, color 0.3s;
+	overflow: hidden;
 }
 
-section1, section2{
-	background-color: #888;
-	width: 80px;
-	min-height: 30px;
-	padding: 10px 0px 15px 5px;
-	position: absolute;
-	top: 350px;
-	z-index: 3;
-	border: 2px solid #000;
+form button[name="delete-account"]:hover {
+	background-color: red;
+	color: white;
 }
 
-section1{
-	left: 220px;
+ul.right-align {
+	margin-left: auto;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 1vw;
 }
 
-section2{
-	left: 320px;
+ul.right-align li {
+	display: inline-block;
 }
 
-user1, password1{
-	width: 100px;
-	min-height: 20px;
-	position: absolute;
-	top: 320px;
-	z-index: 3;
+ul.right-align li a {
+	display: inline-block;
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	border: 2px solid red;
+	border-radius: 20px;
+	padding: 6px;
+	width: 150px;
+	text-align: center;
 }
 
-user1{
-	left: 225px;
+ul.right-align li a:hover {
+	background-color: red;
+	color: white;
 }
 
-password1{
-	left: 325px;
+/********************* EMPTIES ************************/
+#empty1{
+	padding-top: 17vw;
+	border: 2px;
+	border-color: yellow;
+	border-style: solid;
+	background-color: blue;
 }
 
-user2{
-	width: 90px;
-	min-height: 20px;
-	position: relative;
-	z-index: 3;
-	left: 5px;
-}
-	
-
-section3, section4{
-	background-color: #555;
-	width: 300px;
-	height: 120px;
-	padding: 10px;
-	position: absolute;
-	top: 350px;
-	left: 30%;
-	z-index: 4;
-	border: 2px solid #fff;
+#empty2{
+	padding-top: 10vw;
+	border: 2px;
+	border-color: yellow;
+	border-style: solid;
+	background-color: blue;
 }
 
-section3{
-	height: 120px;
+#empty3{
+	padding-top: 7vw;
+	border: 2px;
+	border-color: yellow;
+	border-style: solid;
+	background-color: blue;
 }
 
-section4{
-	height: 180px;
+#empty4{
+	padding-top: 15vw;
+	border: 2px;
+	border-color: yellow;
+	border-style: solid;
+	background-color: blue;
 }
