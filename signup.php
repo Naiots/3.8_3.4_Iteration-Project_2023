@@ -1,6 +1,7 @@
 <?php
-// connect.php (tells where to connect servername, username, password, dbaseName)
-require "Music_Database_mysqli.php";
+ob_start();
+// Session start
+session_start();
 
 // Initiate variables for error codes
 $check10 = '';
@@ -31,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 
 	if ($stmt->execute()) // If the preparation is executed, update the page and let the user know (Use the username to confirm which username was affected)
 	{
-		$sql = "SELECT User_ID, First_Name FROM users WHERE Username = '$myusername' and Password = '$mypassword'"; // New query to select that user's ID
+		$sql = "SELECT User_ID, First_Name FROM users WHERE Username = '$UserName' and Password = '$PW'"; // New query to select that user's ID
 		$query2 =  mysqli_query($conn, $sql); // Connects to the server and runs the query
 		$result2 = mysqli_fetch_array($query2, MYSQLI_ASSOC); // Fetches the rows that match
 		$result2StringFirstName = $result2['First_Name']; // Fetches the First Name
@@ -53,6 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 
 		<!-- Add a title so the user knows what page they're on even if they're in another page -->
 		<title>Graeme's Music | Sign Up</title>
+		
+		<!-- Favicon to make the website's tab unique and personalized to other website tabs -->
+		<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
 
 		<!-- Setup Meta Data and let the browser know what charset is being used -->
 		<meta charset="UTF-8">
@@ -69,6 +73,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 	</head>
 
 	<body>
+		<?php
+		//Pulls the links from the nav.php page and places them in the navigation div
+		require 'loader.php'; //'require' is 100% needed for the site to run 
+		?>
 		<main>
 			<div class = "wrapper">
 
@@ -76,78 +84,80 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 					<!-- Website's logo which also acts as a button to redirect the user to "index.php" -->
 					<div class = "logo">
 						<a href = "index.php">
-							<img src = "images/download.png" style = "width: 12vw; position: static;">
+							<img src = "images/logos/Logo1.png" style = "width: 12vw; position: static;" alt = "Logo">
 						</a>
 					</div>
 
 				</div>
 
-				<!-- Empty div to space out the next divisions from the top -->
-				<div id = "empty2"></div>
+				<div class="content">
 
-				<!-- "content" holds the page's main content -->
-				<div id = "content">
+					<!-- Empty div to space out the next divisions from the top -->
+					<div id = "empty2"></div>
 
-					<img src = "images/download.png" style = "width: 20vw;">
-					<h1>Lorem Ipsum</h1>
+					<!-- "content" holds the page's main content -->
+					<div id = "content">
 
-					<!-- Provides a direct link to "login.php" in case the user already has an account -->
-					<p>Already have an account? - <a href = "login.php">Log In</a></p><br><br>
+						<h1 style = "font-size: 3.5vw;">Create an account</h1>
+
+						<!-- Provides a direct link to "login.php" in case the user already has an account -->
+						<p>Already have an account? - <a href = "login.php">Log In</a></p><br><br>
 
 
-					<div class="login-box">
+						<div class="login-box">
 
-						<!-- The start of the form that the user needs to fill in -->
-						<h3><form method = "post" id = "01_login">
+							<!-- The start of the form that the user needs to fill in -->
+							<h3><form method = "post" id = "01_login">
 
-							<!-- Field for the First Name -->
-							<label for = "login" style = "padding-right: 21.5vw;">First Name</label><br>
-							<input type = "text" name = "fname" placeholder = "Enter Your First Name..."/><br><br>
+								<!-- Field for the First Name -->
+								<label for = "login" style = "padding-right: 21.5vw;">First Name</label><br>
+								<input type = "text" name = "fname" placeholder = "Enter Your First Name..."/><br><br>
 
-							<!-- Field for the Last Name -->
-							<label for = "login" style = "padding-right: 21.5vw;">Last Name</label><br>
-							<input type = "text" name = "lname" placeholder = "Enter Your Last Name..."/><br><br>
+								<!-- Field for the Last Name -->
+								<label for = "login" style = "padding-right: 21.5vw;">Last Name</label><br>
+								<input type = "text" name = "lname" placeholder = "Enter Your Last Name..."/><br><br>
 
-							<!-- Field for the Username -->
-							<label for = "login" style = "padding-right: 21.5vw;">Username</label><br>
-							<input type = "text" name = "username" placeholder = "Enter Your Username..."/><br><br>
+								<!-- Field for the Username -->
+								<label for = "login" style = "padding-right: 21.5vw;">Username</label><br>
+								<input type = "text" name = "username" placeholder = "Enter Your Username..."/><br><br>
 
-							<!-- Field for the Email -->
-							<label for = "login" style = "padding-right: 23.5vw;">Email</label><br>
-							<input type = "text" name = "email" placeholder = "Enter Your Email..."/><br><br>
+								<!-- Field for the Email -->
+								<label for = "login" style = "padding-right: 23.5vw;">Email</label><br>
+								<input type = "text" name = "email" placeholder = "Enter Your Email..."/><br><br>
 
-							<!-- Field for the Password -->
-							<label for = "login" style = "padding-right: 21.5vw;">Password</label><br>
-							<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter Your Password..."/><br>
+								<!-- Field for the Password -->
+								<label for = "login" style = "padding-right: 21.5vw;">Password</label><br>
+								<input id = "password-input" type = "password" name = "password-input" placeholder = "Enter Your Password..."/><br>
 
-							<!-- This division holds the code for the "show password" checkbox -->
-							<div id="show-password">
-								<!-- The actual checkbox and link to the javascript code -->
-								<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
+								<!-- This division holds the code for the "show password" checkbox -->
+								<div id="show-password">
+									<!-- The actual checkbox and link to the javascript code -->
+									<input type="checkbox" onclick="myFunction()"> Show Password<br><br>
 
-								<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
-								<script>
-									function myFunction() {
-										var x = document.getElementById("password-input");
-										if (x.type === "password") {
-											x.type = "text";
-										} else {
-											x.type = "password";
+									<!-- Javascript code for the checkbox to change the type from "password" to "text". This reveals the password in characters -->
+									<script>
+										function myFunction() {
+											var x = document.getElementById("password-input");
+											if (x.type === "password") {
+												x.type = "text";
+											} else {
+												x.type = "password";
+											}
+
 										}
+									</script>
+								</div>
 
-									}
-								</script>
-							</div>
-							
-							<!-- Any error messages will print here -->
-							<?php
-							echo $check11;
-							echo $check10;
-							?>
-							
-							<input type = "submit" value = " Continue "/><br />
-							</form></h3>
+								<!-- Any error messages will print here -->
+								<?php
+								echo $check11;
+								echo $check10;
+								?>
 
+								<input type = "submit" value = " Continue "/><br />
+								</form></h3>
+
+						</div>
 					</div>
 
 				</div>
@@ -157,5 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 				?>
 			</div>
 		</main>
+		<!-- Links the loader javascript -->
+		<script src="js/loader.js"></script>
 	</body>
 </html>
