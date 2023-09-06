@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Activates only when one of the fo
 
 	if ($stmt->execute()) // If the preparation is executed, update the page and let the user know (Use the username to confirm which username was affected)
 	{
-		$sql = "SELECT User_ID, First_Name FROM users WHERE Username = '$MyUsername' and Password = '$MyPassword'"; // New query to select that user's ID
+		$sql = "SELECT User_ID, First_Name FROM users WHERE Username = '$UserName' and Password = '$PW'"; // New query to select that user's ID
 		$query2 =  mysqli_query($conn, $sql); // Connects to the server and runs the query
 		$result2 = mysqli_fetch_array($query2, MYSQLI_ASSOC); // Fetches the rows that match
 		$result2StringFirstName = $result2['First_Name']; // Fetches the First Name
