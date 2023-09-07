@@ -63,7 +63,10 @@ else{
 					require "Music_Database_mysqli.php";
 
 					// Calculates the total duration of the songs
-					$query = ("SELECT SEC_TO_TIME(SUM(s.Duration)) AS Total_Time FROM song_details AS s");
+					$query = ("SELECT SEC_TO_TIME(SUM(s.Duration)) AS Total_Time FROM song_details AS s
+					JOIN song2genre i ON i.Song_ID = s.Song_ID
+					JOIN genre_id g ON g.Genre_ID = i.Genre_ID
+					WHERE g.Genre IN ('Acoustic', 'Bluegrass', 'Country', 'Easy Listening - Female', 'Easy Listening - Group', 'Easy Listening - Male', 'Folk Country', 'Mellow', 'Vocal')");
 
 					// Runs the query above
 					$result = mysqli_query($conn,$query);
